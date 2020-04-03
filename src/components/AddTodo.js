@@ -24,6 +24,14 @@ class AddTodo extends React.Component {
       <div>
         <input
           onChange={e => this.updateInput(e.target.value)}
+          onKeyPress={
+              (e)=>
+              {
+                  if(e.key === "Enter"){
+                      this.handleAddTodo();
+                  }
+              }
+          }
           value={this.state.input}
         />
         <button className="add-todo" onClick={this.handleAddTodo}>
